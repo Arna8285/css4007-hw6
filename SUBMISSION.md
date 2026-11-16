@@ -34,7 +34,7 @@ Results are saved in the `outputs/` folder.
 
 ---
 
-# Part A — Paper calculations
+## Part A — Paper calculations
 
 The paper calculations are included in `part-a-work.pdf`.
 
@@ -64,9 +64,9 @@ The discount factor is gamma = 0.9, and all initial state values are zero.
 
 ### V2 calculations
 
-The requested states and their action values are:
+The requested states and their action values are shown below.
 
-**State (0,1):**
+**State (0,1)**
 
 | Action | Value |
 |---|---:|
@@ -75,9 +75,9 @@ The requested states and their action values are:
 | Down | -3.90 |
 | Left | -1.90 |
 
-Best action: Right.
+**Best action: Right.**
 
-**State (0,2):**
+**State (0,2)**
 
 | Action | Value |
 |---|---:|
@@ -86,9 +86,9 @@ Best action: Right.
 | Down | -1.90 |
 | Left | -3.90 |
 
-Best action: Right.
+**Best action: Right.**
 
-**State (1,2), ice:**
+**State (1,2) — Ice**
 
 | Action | Value |
 |---|---:|
@@ -97,7 +97,7 @@ Best action: Right.
 | Down | -2.71 |
 | Left | -0.91 |
 
-Best action: Up.
+**Best action: Up.**
 
 At the ice tile, the intended direction has a probability of 0.8. Each perpendicular direction has a probability of 0.1.
 
@@ -105,14 +105,14 @@ Two iterations are not enough to obtain the final optimal policy because future 
 
 ---
 
-# Part B — FrozenLake
+## Part B — FrozenLake
 
-### Fixed policy, written before the experiments
+### Fixed policy
 
-The fixed policy uses the following actions:
+The fixed policy was written before running the experiments. It does not learn or change during the simulations.
 
 | State | Action |
-|---|---|
+|---:|---|
 | 0 | Down |
 | 1 | Left |
 | 2 | Left |
@@ -125,9 +125,7 @@ The fixed policy uses the following actions:
 | 13 | Right |
 | 14 | Right |
 
-The policy was written before running the experiments. It is a fixed policy and does not learn or change during the simulations.
-
-### Results
+### Experimental results
 
 Each condition was tested with 50 episodes in three batches. The random action generator was seeded separately for each episode using the episode seed.
 
@@ -167,9 +165,9 @@ These experiments do not train a policy. They only test the performance of rando
 
 ---
 
-# Part C — Custom solver
+## Part C — Custom solver
 
-## Compare code with paper
+### Comparison with paper calculations
 
 The custom Value Iteration solver was implemented using the same map and rules as Part A.
 
@@ -199,19 +197,19 @@ The first two iterations match the paper calculations.
 
 There were no discrepancies between the paper calculations and the code output.
 
-## Values, policies and convergence
+### Values, policies and convergence
 
-### Original map
+#### Original map
 
-Final value map:
+**Final value map:**
 
 ```text
-[4.2, 8.0, 10.0, 0.0]
-[2.78, #, 5.8242, 0.0]
-[1.5358, 2.8176, 4.2418, 2.8176]
+[4.2,    8.0,    10.0,    0.0]
+[2.78,   #,      5.8242,  0.0]
+[1.5358, 2.8176, 4.2418,  2.8176]
 ```
 
-Optimal policy:
+**Optimal policy:**
 
 ```text
 [R, R, R, G]
@@ -223,19 +221,19 @@ Optimal policy:
 - Final delta: 0.0000002165
 - Stopping threshold: 0.000001
 
-### Extended map
+#### Extended map
 
 The extended map includes sand (D) and shallow water (W).
 
-Final value map:
+**Final value map:**
 
 ```text
-[4.2, 8.0, 10.0, 0.0]
-[2.78, #, 5.8242, 0.0]
+[4.2,   8.0,    10.0,   0.0]
+[2.78,  #,      5.8242, 0.0]
 [1.502, 2.8176, 4.2418, 2.8176]
 ```
 
-Optimal policy:
+**Optimal policy:**
 
 ```text
 [R, R, R, G]
@@ -256,7 +254,7 @@ The action order used for tie-breaking is U, R, D, L. If multiple actions have t
 - `outputs/part_c_base.txt` — original map values, policy, convergence and simulation.
 - `outputs/part_c_extended.txt` — extended map values, policy, convergence and simulation.
 
-## Simulation results
+### Simulation results
 
 Each map was tested using three batches of 50 episodes.
 
@@ -269,7 +267,7 @@ Each map was tested using three batches of 50 episodes.
 | Extended | 22 | 50 | 0 | 0 | 5.00 | 1.5020 |
 | Extended | 33 | 50 | 0 | 0 | 5.00 | 1.5020 |
 
-## Explain your results
+### Explanation of results
 
 The original map has a Right action at the starting state. In the extended map, the starting action changes to Up.
 
@@ -281,15 +279,15 @@ The extended map achieved 150 successful episodes out of 150. The original map h
 
 The computed values describe expected long-term discounted rewards. Simulations are finite experiments with 50 episodes per batch, so their results can vary. They help evaluate the policy but do not replace the Value Iteration calculations.
 
-## Rule checks
+### Rule checks
 
 The implementation checks the following rules:
 
-- **Boundary behavior:** If an action moves outside the map, the agent stays in the same state.
-- **Wall behavior:** The wall is not a valid state. If an action leads to a wall, the agent stays in its current state.
-- **Ice probabilities:** The intended direction has probability 0.8, and the two perpendicular directions have probability 0.1 each. Their total probability is 1.0.
-- **Floor rewards:** Normal floor and start tiles have reward -1, mud has reward -3, ice has reward -1, sand has reward -2, and shallow water has reward -5.
-- **Terminal states:** Goal and hole states have value zero after termination. No additional rewards are received after the episode ends.
+1. **Boundary behavior:** If an action moves outside the map, the agent stays in the same state.
+2. **Wall behavior:** The wall is not a valid state. If an action leads to a wall, the agent stays in its current state.
+3. **Ice probabilities:** The intended direction has probability 0.8, and the two perpendicular directions have probability 0.1 each. Their total probability is 1.0.
+4. **Floor rewards:** Normal floor and start tiles have reward -1, mud has reward -3, ice has reward -1, sand has reward -2, and shallow water has reward -5.
+5. **Terminal states:** Goal and hole states have value zero after termination. No additional rewards are received after the episode ends.
 
 The code uses assertions to check ice probabilities, boundary behavior, wall behavior, and terminal rewards.
 
@@ -301,7 +299,7 @@ All model checks passed!
 
 ---
 
-# Conclusion
+## Conclusion
 
 In this homework, I implemented and tested a fixed policy, random policy, and custom Value Iteration solver.
 
