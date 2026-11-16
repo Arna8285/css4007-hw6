@@ -133,15 +133,15 @@ Each condition was tested with 50 episodes in three batches.
 
 | Slippery | Policy | Batch seed | Goals /50 | Holes /50 | Time limits /50 | Success % | Mean steps |
 |---|---|---:|---:|---:|---:|---:|---:|
-| False | Random | 11 | 2 | 48 | 0 | 4% | 9.78 |
-| False | Random | 22 | 0 | 50 | 0 | 0% | 6.90 |
-| False | Random | 33 | 0 | 50 | 0 | 0% | 7.44 |
+| False | Random | 11 | 0 | 50 | 0 | 0% | 8.14 |
+| False | Random | 22 | 1 | 49 | 0 | 2% | 7.56 |
+| False | Random | 33 | 0 | 50 | 0 | 0% | 6.88 |
 | False | Fixed | 11 | 50 | 0 | 0 | 100% | 6.00 |
 | False | Fixed | 22 | 50 | 0 | 0 | 100% | 6.00 |
 | False | Fixed | 33 | 50 | 0 | 0 | 100% | 6.00 |
-| True | Random | 11 | 0 | 50 | 0 | 0% | 8.44 |
-| True | Random | 22 | 1 | 49 | 0 | 2% | 7.76 |
-| True | Random | 33 | 0 | 50 | 0 | 0% | 7.30 |
+| True | Random | 11 | 0 | 50 | 0 | 0% | 8.06 |
+| True | Random | 22 | 0 | 50 | 0 | 0% | 7.60 |
+| True | Random | 33 | 0 | 50 | 0 | 0% | 7.98 |
 | True | Fixed | 11 | 1 | 49 | 0 | 2% | 5.24 |
 | True | Fixed | 22 | 2 | 48 | 0 | 4% | 5.72 |
 | True | Fixed | 33 | 1 | 49 | 0 | 2% | 4.96 |
