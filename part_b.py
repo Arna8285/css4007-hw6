@@ -38,11 +38,9 @@ for slippery in slippery_values:
                 render_mode="ansi"
             )
 
-            # Отдельный генератор случайных действий
-            rng = random.Random(batch_seed)
-
             for i in range(50):
                 episode_seed = 1000 * batch_seed + i
+                rng = random.Random(episode_seed)
                 state, info = env.reset(seed=episode_seed)
 
                 steps = 0
@@ -143,5 +141,4 @@ for row in summaries:
 
 print()
 print("Files saved in outputs folder.")
-
 
