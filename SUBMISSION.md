@@ -107,7 +107,7 @@ Two iterations are not enough to obtain the final optimal policy because future 
 
 # Part B — FrozenLake
 
-## Fixed policy, written before the experiments
+### Fixed policy, written before the experiments
 
 The fixed policy uses the following actions:
 
@@ -127,9 +127,9 @@ The fixed policy uses the following actions:
 
 The policy was written before running the experiments. It is a fixed policy and does not learn or change during the simulations.
 
-## Results
+### Results
 
-Each condition was tested with 50 episodes in three batches.
+Each condition was tested with 50 episodes in three batches. The random action generator was seeded separately for each episode using the episode seed.
 
 | Slippery | Policy | Batch seed | Goals /50 | Holes /50 | Time limits /50 | Success % | Mean steps |
 |---|---|---:|---:|---:|---:|---:|---:|
@@ -285,11 +285,11 @@ The computed values describe expected long-term discounted rewards. Simulations 
 
 The implementation checks the following rules:
 
-1. **Boundary behavior:** If an action moves outside the map, the agent stays in the same state.
-2. **Wall behavior:** The wall is not a valid state. If an action leads to a wall, the agent stays in its current state.
-3. **Ice probabilities:** The intended direction has probability 0.8, and the two perpendicular directions have probability 0.1 each. Their total probability is 1.0.
-4. **Floor rewards:** Normal floor and start tiles have reward -1. Mud has reward -3, ice has reward -1, sand has reward -2, and shallow water has reward -5.
-5. **Terminal states:** Goal and hole states have value zero after termination. No additional rewards are received after the episode ends.
+- **Boundary behavior:** If an action moves outside the map, the agent stays in the same state.
+- **Wall behavior:** The wall is not a valid state. If an action leads to a wall, the agent stays in its current state.
+- **Ice probabilities:** The intended direction has probability 0.8, and the two perpendicular directions have probability 0.1 each. Their total probability is 1.0.
+- **Floor rewards:** Normal floor and start tiles have reward -1, mud has reward -3, ice has reward -1, sand has reward -2, and shallow water has reward -5.
+- **Terminal states:** Goal and hole states have value zero after termination. No additional rewards are received after the episode ends.
 
 The code uses assertions to check ice probabilities, boundary behavior, wall behavior, and terminal rewards.
 
