@@ -1,0 +1,55 @@
+
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+  (Up)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+  (Up)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+  (Up)
+[41mS[0mFFF
+FHFH
+FFFH
+HFFG
+  (Down)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+  (Down)
+SFFF
+FHFH
+[41mF[0mFFH
+HFFG
+  (Up)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+  (Down)
+SFFF
+FHFH
+[41mF[0mFFH
+HFFG
+  (Left)
+SFFF
+FHFH
+[41mF[0mFFH
+HFFG
+  (Up)
+SFFF
+[41mF[0mHFH
+FFFH
+HFFG
+  (Right)
+SFFF
+F[41mH[0mFH
+FFFH
+HFFG
